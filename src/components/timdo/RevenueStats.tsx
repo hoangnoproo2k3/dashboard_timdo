@@ -1,18 +1,16 @@
 "use client"
 
-import React from "react"
-
 export default function RevenueStats() {
   // Giả sử tổng doanh thu
   const totalRevenue = 10000000 // 10 triệu VND
 
   // Tính toán phân chia doanh thu
-  const adminShare = totalRevenue * 0.3 // 30% cho admin phụ
+  const adminShare = totalRevenue * 0.3 // 30% cho cộng tác viên
   const ownerShare = totalRevenue * 0.7 // 70% cho chủ
 
   const stats = [
     {
-      label: "💰 Tổng doanh thu",
+      label: "💰 Tổng lợi nhuận chung",
       value: new Intl.NumberFormat("vi-VN", {
         style: "currency",
         currency: "VND",
@@ -20,7 +18,7 @@ export default function RevenueStats() {
       className: "text-blue-600",
     },
     {
-      label: "👩‍💼 Doanh thu Admin phụ (30%)",
+      label: "👩‍💼 Phần của bạn từ nỗ lực chung (30%)",
       value: new Intl.NumberFormat("vi-VN", {
         style: "currency",
         currency: "VND",
@@ -28,7 +26,7 @@ export default function RevenueStats() {
       className: "text-green-600",
     },
     {
-      label: "🏠 Doanh thu Chủ (70%)",
+      label: "🏠 Phần của đối tác từ nỗ lực chung (70%)",
       value: new Intl.NumberFormat("vi-VN", {
         style: "currency",
         currency: "VND",
@@ -36,7 +34,7 @@ export default function RevenueStats() {
       className: "text-purple-600",
     },
     {
-      label: "📅 Doanh thu hôm nay",
+      label: "📅 Giá trị hợp tác hôm nay",
       value: new Intl.NumberFormat("vi-VN", {
         style: "currency",
         currency: "VND",
@@ -44,7 +42,7 @@ export default function RevenueStats() {
       className: "text-orange-600",
     },
     {
-      label: "📆 Doanh thu tháng này",
+      label: "📆 Giá trị hợp tác tháng này",
       value: new Intl.NumberFormat("vi-VN", {
         style: "currency",
         currency: "VND",

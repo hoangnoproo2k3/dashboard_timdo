@@ -1,12 +1,4 @@
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
-import {
   Pagination,
   PaginationContent,
   PaginationItem,
@@ -14,9 +6,16 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-import { ArticleData, PaginationInfo } from "./ArticleList"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 import { convertToVnd } from "@/helpers/convertToVnd"
-import { useState } from "react"
+import { ArticleData, PaginationInfo } from "./ArticleList"
 
 interface ArticlesTableProps {
   articles: ArticleData[]
@@ -29,28 +28,27 @@ export const ArticlesTable: React.FC<ArticlesTableProps> = ({
   pagination,
   handlePageChange,
 }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  // const [isModalOpen, setIsModalOpen] = useState(false)
+  // const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
-  const handleImageClick = (imageUrl: string) => {
-    setSelectedImage(imageUrl)
-    setIsModalOpen(true)
-  }
+  // const handleImageClick = (imageUrl: string) => {
+  //   setSelectedImage(imageUrl)
+  //   setIsModalOpen(true)
+  // }
 
-  const closeModal = () => {
-    setIsModalOpen(false)
-    setSelectedImage(null)
-  }
+  // const closeModal = () => {
+  //   setIsModalOpen(false)
+  //   setSelectedImage(null)
+  // }
   return (
     <>
       <Table>
         <TableHeader>
           <TableRow>
             <TableHead>User ID</TableHead>
-            <TableHead>Article ID</TableHead>
-            <TableHead>Fee Level ID</TableHead>
-            <TableHead>Payment Receipt</TableHead>
-            <TableHead>Revenue</TableHead>
+            <TableHead>Tin ID</TableHead>
+            <TableHead>Gói</TableHead>
+            <TableHead>Chiết khấu affilate</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -59,7 +57,7 @@ export const ArticlesTable: React.FC<ArticlesTableProps> = ({
               <TableCell>{article.userId}</TableCell>
               <TableCell>{article.articleId}</TableCell>
               <TableCell>{article.feeLevelId}</TableCell>
-              <TableCell>
+              {/* <TableCell>
                 {article.paymentReceiptImageUrl ? (
                   <div
                     className="inline-block w-12 h-12 border border-gray-300 rounded-md overflow-hidden cursor-pointer"
@@ -94,8 +92,8 @@ export const ArticlesTable: React.FC<ArticlesTableProps> = ({
                     />
                   </div>
                 </div>
-              )}
-              <TableCell>{convertToVnd(article.totalRevenue)}</TableCell>
+              )} */}
+              <TableCell>{convertToVnd(article.totalRevenue * 0.3)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
