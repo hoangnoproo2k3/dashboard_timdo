@@ -33,7 +33,7 @@ const ArticlesRevenueDashboard: React.FC = () => {
     totalPages: 0,
   })
 
-  const [startDate, setStartDate] = useState<string>("2025-05-18")
+  const [startDate, setStartDate] = useState<string>("2025-06-01")
   const [endDate, setEndDate] = useState<string>("")
   const [month, setMonth] = useState<string>("")
   const [year, setYear] = useState<string>("")
