@@ -93,7 +93,7 @@ export const ArticlesTable: React.FC<ArticlesTableProps> = ({
                   </div>
                 </div>
               )} */}
-              <TableCell>{convertToVnd(article.totalRevenue * 0.3)}</TableCell>
+              <TableCell>{convertToVnd(article.totalRevenue * 0.4)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
